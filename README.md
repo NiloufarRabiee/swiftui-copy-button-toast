@@ -136,6 +136,14 @@ GitHub Actions CI is also included.
 
 This package does not send copied text anywhere. It writes only to the operating system clipboard. Clipboard behavior and visibility are controlled by the platform.
 
+## Clipboard Safety
+
+Copied content is placed in the operating system's **general clipboard**, which can remain available after the confirmation toast disappears. Other apps may be able to access it, subject to platform privacy protections.
+
+- Avoid copying passwords, authentication tokens, or other highly sensitive values without considering that exposure.
+- The `toastDuration` setting only controls visual feedback; it does **not** clear or expire clipboard contents.
+- If an app requires clipboard expiration or additional handling, implement that behavior separately at the application level.
+
 ## Contributing
 
 Contributions and improvements are welcome.
